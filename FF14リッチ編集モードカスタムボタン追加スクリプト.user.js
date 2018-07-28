@@ -22,7 +22,7 @@
 (function($) {
     //共通変数
         /** 設定値 */
-        var settings = {font_size:'25',tooltip:'カスタム文字サイズ'};
+        var settings = {font_size:'25',tooltip:'カスタム文字サイズ(25)'};
 
 
     //==================================================
@@ -73,7 +73,7 @@
                 //極大サイズボタンの下に要素を追加
                 $(elemTextBigSizeBtn[0]).after(btnHtml);
                 //カスタム文字サイズボタンのイベント追加
-                document.getElementById('custom_size_btn').addEventListener('click',clickCustomTextSizeBtn,false);
+                $('#custom_size_btn').on('click',clickCustomTextSizeBtn);
             }
         }
 
@@ -99,20 +99,24 @@
             with (this.builder) {
             dialog(
                     'コンフィグ',
-                    { width: 600, height: 350 },
+                    { width: 600, height: 350, autoReload: false },
                     section(
                             'カスタム文字サイズボタン',
                             'ボタン押下時の文字サイズに関する設定をします。',
                             grid(
                                 integer("フォントサイズ", 'font_size', 25), '\n',
-                                textarea("ツールチップ", 'tooltip', "カスタム文字サイズ", { cols: 70 })
+                                textarea("ツールチップ", 'tooltip', "カスタム文字サイズ(25)", { cols: 70 })
                             )
                     )
             );
             }
         }, {
             saveKey: 'GM_config',
-            aftersave: function() {},
+            aftersave: function() {
+                //設定の反映
+                settings = Config.load();
+                $('#custom_size_btn').attr('title',settings.tooltip);
+            },
             afteropen : function() {}
         });
         settings = Config.load();
