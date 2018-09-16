@@ -1,14 +1,25 @@
 ## FF14リッチ編集モードカスタムボタン追加スクリプト
 
 FF14のロードストーンでリッチ編集モード時のボタン一覧に以下のカスタムボタンを追加するスクリプトです。  
-　※ver1.0.0時点  
-　・カスタム文字サイズボタン
-
+　※ver1.1.0時点  
+　・カスタム文字サイズボタン  
+　・エオルゼアデータベースコード埋め込みボタン  
+ 
 ## 説明
 
 ・カスタム文字サイズボタン  
 　任意の文字サイズに設定できるボタンを追加します。
 ![カスタム文字サイズボタン ](https://raw.github.com/NohohonNohon/ff14RichEditorCustomBtnScript/master/data/CustomTextSizeBtn.jpg)
+  
+・エオルゼアデータベースコード埋め込みボタン   
+　エオルゼアデータベースコードを検索＆設定するボタンを追加します。   
+　
+ 　[検索する文字を選択して、ボタンをクリックした場合（該当データ１件）]
+![カスタム文字サイズボタン ](https://raw.github.com/NohohonNohon/ff14RichEditorCustomBtnScript/master/data/CodeSearchBtn1.jpg)
+  
+ 　[検索する文字を選択して、ボタンをクリックした場合（該当データ複数）]  
+　　※検索結果が別画面で表示されるので、対象のリンクをクリックします。
+![カスタム文字サイズボタン ](https://raw.github.com/NohohonNohon/ff14RichEditorCustomBtnScript/master/data/CodeSearchBtn2.jpg)
 
 ## 対応ブラウザ
 
