@@ -8,7 +8,7 @@
 // @include     http://jp.finalfantasyxiv.com/lodestone/my/blog/*
 // @include     http://jp.finalfantasyxiv.com/lodestone/my/event/post/*
 // @include     https://jp.finalfantasyxiv.com/lodestone/playguide/db/*
-// @version     1.1.0
+// @version     1.1.1
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_deleteValue
@@ -267,7 +267,7 @@
                     targetURL= window.opener.location.protocol + '//' + window.opener.location.hostname;
                 } else {
                     //通常画面表示の場合
-                    GM_registerMenuCommand('FF14リッチ編集モードカスタムボタン(設定)', Config.open);
+                    GM_registerMenuCommand('FF14リッチ編集モードカスタムボタン(設定)', CustomBtn.openConfig);
                     addStyleSheet(COMMON_CSS);
                     addCustomTextSizeBtn();
                     addSearchCodeBtn();
@@ -355,6 +355,13 @@
             */
             removeLoading: function(){
                 $('#custom_btn_loading').remove();
+            },
+
+            /**
+            * 設定画面を開く
+            */
+            openConfig: function() {
+                Config.open();
             }
         };
         return global;
